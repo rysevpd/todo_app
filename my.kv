@@ -1,0 +1,115 @@
+#:kivy 2.0.0
+
+<ItemLabel@Label>:
+    font_size: '25sp'
+    halign: 'left'
+    valign: 'middle'
+    text_size: self.size
+
+<Container>:
+    rows: 3
+    text_input: text_input
+    nitro_1: nitro_1
+    nitro_2: nitro_2
+    nitro_3: nitro_3
+    nitro_4: nitro_4
+    nitro_5: nitro_5
+
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'fon.jpg'
+
+
+    AnchorLayout:
+        size_hint: 1, 0.15
+        TextInput:
+            id: text_input
+            font_size: '45sp'
+            multiline: False
+            opacity: 0.5
+            input_type: 'number'
+            input_filter: 'int'
+
+    GridLayout:
+        #canvas:
+
+            #Rectangle:
+            #    source: 'fon.jpg'
+            #    size: self.size
+            #    pos: self.pos
+
+        cols: 2
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: [30, 0, 0, 0,]
+            ItemLabel:
+
+                text: '1'
+                color: 1,0,1,1
+                # font_size: '25sp'
+            ItemLabel:
+
+                text: '2'
+                color: 1,0,1,1
+                # font_size: '25sp'
+            ItemLabel:
+
+                text: '3'
+                color: 1,0,1,1
+                # font_size: '25sp'
+            ItemLabel:
+
+                text: '4'
+                color: 1,0,1,1
+                # font_size: '25sp'
+            ItemLabel:
+
+                text: '5'
+                color: 1,0,1,1
+                # font_size: '25sp'
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: 0.5, 1
+            ItemLabel:
+                id: nitro_1
+                text: 'ответ'
+                color: 1,0,1,1
+                # font_size: '25sp'
+            ItemLabel:
+                id: nitro_2
+                text: 'ответ'
+                color: 1,0,1,1
+                # font_size: '25sp'
+            ItemLabel:
+                id: nitro_3
+                text: 'ответ'
+                color: 1,0,1,1
+                # font_size: '25sp'
+            ItemLabel:
+                id: nitro_4
+                text: 'ответ'
+                color: 1,0,1,1
+                # font_size: '25sp'
+            ItemLabel:
+                id: nitro_5
+                text: 'ответ'
+                color: 1,0,1,1
+                # font_size: '25sp'
+    BoxLayout:
+        opacity: 0.5
+        size_hint: 0.9, 0.15
+        padding: [30, 0, 30, 20]
+        Button:
+            color: 1,0,1,1
+            text: 'Go!'
+            font_size: 40
+            opacity: 0.5
+            on_release:
+                root.calculate()
+
+
+
